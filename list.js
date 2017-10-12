@@ -8,10 +8,10 @@ serialPort.list(function (err, ports) {
   });
 });
 
-var port = new SerialPort('/dev/ttyAMA0"', {
+var port = new serialPort('/dev/ttyAMA0"', {
   baudRate: 57600
 });
 
-const Readline = SerialPort.parsers.Readline;
+const Readline = serialPort.parsers.Readline;
 const parser = port.pipe(new Readline({ delimiter: '\r\n' }));
 parser.on('data', console.log);
