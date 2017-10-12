@@ -8,7 +8,7 @@ serialPort.list(function (err, ports) {
   });
 });
 
-var port = new serialPort('/dev/ttyAMA0"', {
+var port = new serialPort('/dev/ttyAMA0', {
   baudRate: 57600
 });
 
