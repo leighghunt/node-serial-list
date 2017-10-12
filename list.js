@@ -1,6 +1,6 @@
-var serialPort = require("serialport");
+var SerialPort = require("serialport");
 
-serialPort.list(function (err, ports) {
+SerialPort.list(function (err, ports) {
   ports.forEach(function(port) {
     console.log(port.comName);
     console.log(port.pnpId);
@@ -8,11 +8,11 @@ serialPort.list(function (err, ports) {
   });
 });
 
-var port = new serialPort('/dev/ttyAMA0', {
+var serialPort = new SerialPort('/dev/ttyAMA0', {
   baudRate: 57600
 });
 
-const Readline = serialPort.parsers.Readline;
+const Readline = SerialPort.parsers.Readline;
 const parser = port.pipe(new Readline({ delimiter: '\r\n' }));
 
 serialPort.on("open", function (err) {
