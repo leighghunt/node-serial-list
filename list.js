@@ -13,7 +13,7 @@ var serialPort = new SerialPort('/dev/ttyAMA0', {
 });
 
 const Readline = SerialPort.parsers.Readline;
-const parser = port.pipe(new Readline({ delimiter: '\r\n' }));
+const parser = serialPort.pipe(new Readline({ delimiter: '\r\n' }));
 
 serialPort.on("open", function (err) {
   if(err){
