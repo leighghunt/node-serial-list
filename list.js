@@ -1,5 +1,6 @@
 var SerialPort = require("serialport");
 
+/*
 SerialPort.list(function (err, ports) {
   ports.forEach(function(port) {
     console.log(port.comName);
@@ -7,9 +8,10 @@ SerialPort.list(function (err, ports) {
     console.log(port.manufacturer);
   });
 });
+*/
 
 var serialPort = new SerialPort('/dev/ttyAMA0', {
-  baudRate: 57600
+  baudRate: 57600,
 });
 
 const Readline = SerialPort.parsers.Readline;
