@@ -7,3 +7,11 @@ serialPort.list(function (err, ports) {
     console.log(port.manufacturer);
   });
 });
+
+var port = new SerialPort('/dev/ttyAMA0"', {
+  baudRate: 57600
+});
+
+const Readline = SerialPort.parsers.Readline;
+const parser = port.pipe(new Readline({ delimiter: '\r\n' }));
+parser.on('data', console.log);
