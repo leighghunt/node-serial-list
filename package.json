@@ -1,5 +1,5 @@
 {
   "dependencies": {
-    "serialport": "^6.0.0"
+    "serialport": "^6.0.0-beta2"
   }
 }
