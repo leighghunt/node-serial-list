@@ -14,4 +14,20 @@ var port = new serialPort('/dev/ttyAMA0', {
 
 const Readline = serialPort.parsers.Readline;
 const parser = port.pipe(new Readline({ delimiter: '\r\n' }));
-parser.on('data', console.log);
+
+serialPort.on("open", function (err) {
+  if(err){
+    console.log('error', 'serialPort.on("open" -> err');
+    console.log('error', err.message);
+//    winston.log('error', err);
+  } else
+  {
+    console.log('open');
+    console.info('serial port opened OK');
+
+    parser.on('data', function(data) {
+      console.log("parser.on('data'...");
+      console.log(data);
+    });
+  }
+});
