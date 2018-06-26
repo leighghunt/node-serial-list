@@ -1,4 +1,4 @@
-version: '3'
+version: '2'
 services:
   serial-list:
    container_name: serial-list
