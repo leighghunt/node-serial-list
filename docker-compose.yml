@@ -7,7 +7,7 @@ services:
    volumes:
      - /home/pi/logFiles:/root/logFiles
    devices:
-  #   - "/dev/ttyAMA0:/dev/ttyAMA0"
+     - "/dev/ttyAMA0:/dev/ttyAMA0"
   #   - "/dev/mem:/dev/mem"
   #   - "/dev/tty.Bluetooth-Incoming-Port:/dev/ttyAMA0"
    environment:
